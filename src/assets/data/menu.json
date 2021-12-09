@@ -1,0 +1,14 @@
+[
+    {
+      "icon": "person-add",
+      "name": "Registrar Usuarios",
+      "direccion": "/registro-de-usuario"
+  
+    },
+    {
+      "icon": "logo-usd",
+      "name": "Registrar Viajes",
+      "direccion": "/registro-de-viajes"
+  
+    }
+  ]

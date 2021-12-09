@@ -1,0 +1,7 @@
+{
+  "name": "AppRadioTaxi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

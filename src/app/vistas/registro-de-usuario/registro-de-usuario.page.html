@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>registro-de-usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card  class="cardconteudo">
+    <ion-card-header>
+      <ion-card-subtitle>Formulario de registro de usuario</ion-card-subtitle>
+      <ion-card-title>Usuario</ion-card-title>
+   </ion-card-header>
+    
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" name="nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellido</ion-label>
+        <ion-input type="text" name="apellido"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RUT</ion-label>
+        <ion-input type="text" name="rut"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="text" name="correo"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" name="password"> </ion-input>
+      </ion-item><br>
+    
+  </ion-card>
+  <ion-button expand="block" fill="outline" color="dark" (click)="enviarDatos()" >Registrar</ion-button>
+  <ion-button routerLink="/inicio" expand="block" fill="outline" color="dark">Cancelar</ion-button>
+<ion-fab vertical="bottom" slot="fixed" horizontal="end">
+<ion-fab-button routerLink="/inicio" color="morado">
+  <ion-icon name="home"></ion-icon>
+</ion-fab-button>
+</ion-fab>
+  </ion-content>
+
