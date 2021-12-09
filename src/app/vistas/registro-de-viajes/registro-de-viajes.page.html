@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>registro-de-viajes</ion-title>
+    <ion-title>Carreras</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -12,25 +12,25 @@
       <ion-card-content>
           <ion-item>
               <ion-label position="floating">Nombre del Cliente: </ion-label>
-              <ion-input type="text" name="nombre_del_cliente" ></ion-input>
+              <ion-input type="text" name="nombre" [(ngModel)]="datos_viaje.nombre"></ion-input>
           </ion-item>
           <ion-item>
               <ion-label position="floating">Direccion: </ion-label>
-              <ion-input type="text" name="direccion" ></ion-input>
+              <ion-input type="text" name="direccion" [(ngModel)]="datos_viaje.direccion"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating">Destino: </ion-label>
-            <ion-input type="text" name="destino" ></ion-input>
+            <ion-input type="text" name="destino" [(ngModel)]="datos_viaje.destino"></ion-input>
         </ion-item>
           <ion-item>
-              <ion-select  placeholder="Seleccionar">
-                  <ion-select-option>
+              <ion-select [(ngModel)]="datos_viaje.id_usuario"  placeholder="Seleccionar">
+                  <ion-select-option *ngFor="let dato_obtenido of datos_obtenidos" [value]="dato_obtenido._id">{{dato_obtenido.nombre}}
                   </ion-select-option>
                </ion-select>
           </ion-item>
       </ion-card-content>
   </ion-card>
-  <ion-button  expand="block"  fill="outline" color="dark" (click)="enviarEgreso()">Registrar</ion-button>
+  <ion-button  expand="block"  fill="outline" color="dark" (click)="enviarViaje()">Registrar</ion-button>
   <ion-button routerLink="/inicio" expand="block" fill="outline" color="dark">Cancelar</ion-button>
   <ion-fab vertical="bottom" slot="fixed" horizontal="end">
       <ion-fab-button routerLink="/inicio" color="morado">
