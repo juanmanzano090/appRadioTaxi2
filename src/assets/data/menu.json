@@ -10,5 +10,11 @@
       "name": "Registrar Viajes",
       "direccion": "/registro-de-viajes"
   
+    },
+    {
+        "icon": "trending-up",
+        "name": "Lista de carreras",
+        "direccion": "/listar-viajes"
+    
     }
   ]

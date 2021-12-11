@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'registro-de-viajes',
     loadChildren: () => import('./vistas/registro-de-viajes/registro-de-viajes.module').then( m => m.RegistroDeViajesPageModule)
   },
+  {
+    path: 'listar-viajes',
+    loadChildren: () => import('./vistas/listar-viajes/listar-viajes.module').then( m => m.ListarViajesPageModule)
+  },
 ];
 
 @NgModule({

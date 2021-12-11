@@ -25,4 +25,7 @@ export class FormulaService {
   crearViaje(datos_viaje){
     return this.http.post(`${this.backend1}/crear-viaje`,datos_viaje);
   }
+  obtenerViaje(){
+    return this.http.get(`${this.backend1}/obtener-viajes`)
+  }
 }
