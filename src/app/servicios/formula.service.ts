@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class FormulaService {
 
   backend = environment.backend+"/usuario";
-  backend1 = environment.backend+"viaje";
+  backend1 = environment.backend+"/viaje";
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +20,7 @@ export class FormulaService {
     return this.http.post(`${this.backend}/crear-usuario`,datos_usuario);
   }
   obtenerDatosUsuario(){
-    return this.http.get(`${this.backend}/obtener-usuario`);
+    return this.http.get(`${this.backend}/obtener-usuarios`);
   }
   crearViaje(datos_viaje){
     return this.http.post(`${this.backend1}/crear-viaje`,datos_viaje);

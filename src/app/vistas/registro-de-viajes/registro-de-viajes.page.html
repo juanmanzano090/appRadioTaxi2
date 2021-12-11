@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Carreras</ion-title>
+    <ion-title class= "tamano" mode="ios">Carreras</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -24,7 +24,8 @@
         </ion-item>
           <ion-item>
               <ion-select [(ngModel)]="datos_viaje.id_usuario"  placeholder="Seleccionar">
-                  <ion-select-option *ngFor="let dato_obtenido of datos_obtenidos" [value]="dato_obtenido._id">{{dato_obtenido.nombre}}
+                  <ion-select-option *ngFor="let dato_obtenido of datos_obtenidos" [value]="dato_obtenido._id">
+                    {{dato_obtenido.nombre}} {{dato_obtenido.apellido}}
                   </ion-select-option>
                </ion-select>
           </ion-item>

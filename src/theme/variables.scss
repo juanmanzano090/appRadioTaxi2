@@ -74,6 +74,22 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+    /** morado**/
+    --ion-color-morado: #a17ee2;
+    --ion-color-morado-rgb: 161,126,226;
+    --ion-color-morado-contrast: #000000;
+    --ion-color-morado-contrast-rgb: 0,0,0;
+    --ion-color-morado-shade: #8e6fc7;
+    --ion-color-morado-tint: #aa8be5;
+}
+.ion-color-morado{
+  --ion-color-base: var(--ion-color-morado) !important;
+  --ion-color-base-rgb: var(--ion-color-morado-rgb) !important;
+  --ion-color-contrast: var(--ion-color-morado-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-morado-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-morado-shade) !important;
+  --ion-color-tint: var(--ion-color-morado-tint) !important;
 }
 
 @media (prefers-color-scheme: dark) {
