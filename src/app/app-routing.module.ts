@@ -24,6 +24,10 @@ const routes: Routes = [
     path: 'listar-viajes',
     loadChildren: () => import('./vistas/listar-viajes/listar-viajes.module').then( m => m.ListarViajesPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./vistas/login/login.module').then( m => m.LoginPageModule)
+  },
 ];
 
 @NgModule({

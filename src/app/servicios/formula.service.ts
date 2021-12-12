@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Componente } from '../interfaces/interfaces';
 import { environment } from 'src/environments/environment';
+import { Params } from '@angular/router';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +29,9 @@ export class FormulaService {
     return this.http.post(`${this.backend1}/crear-viaje`,datos_viaje);
   }
   obtenerViaje(){
-    return this.http.get(`${this.backend1}/obtener-viajes`)
+    return this.http.get(`${this.backend1}/obtener-viajes`);
+  }
+  obtenerLogin(nombre){
+    return this.http.get(`${this.backend}/obtener-login/${nombre}`);
   }
 }
