@@ -3,37 +3,81 @@
     <ion-title class="tamano" mode="ios">Usuarios</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
   <ion-card  class="cardconteudo">
     <ion-card-header>
       <ion-card-subtitle>Formulario de registro de usuario</ion-card-subtitle>
       <ion-card-title>Usuario</ion-card-title>
    </ion-card-header>
-    
+<form #formulario = "ngForm">
       <ion-item>
         <ion-label position="floating">Nombre</ion-label>
-        <ion-input type="text" name="nombre" [(ngModel)]="datos_usuario.nombre"></ion-input>
+        <ion-input type="text" 
+                   name="nombre" 
+                   [(ngModel)]="datos_usuario.nombre"
+                   required
+                   minlength= 4
+                   maxlength= 15>
+        </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Apellido</ion-label>
-        <ion-input type="text" name="apellido" [(ngModel)]="datos_usuario.apellido"></ion-input>
+        <ion-input type="text" 
+                   name="apellido" 
+                   [(ngModel)]="datos_usuario.apellido"
+                   required
+                   minlength= 4
+                   maxlength= 20>
+        </ion-input>
       </ion-item>
-      <ion-item>
+      <ion-item > 
         <ion-label position="floating">RUT</ion-label>
-        <ion-input type="text" name="rut"[(ngModel)]="datos_usuario.rut"></ion-input>
+        <ion-input type="text" 
+                   name="rut"
+                   [(ngModel)]="datos_usuario.rut"
+                   required
+                   minlength= 9
+                   maxlength= 10>
+        </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Correo</ion-label>
-        <ion-input type="text" name="correo" [(ngModel)]="datos_usuario.correo"> </ion-input>
+        <ion-input type="text" 
+                   name="correo" 
+                   [(ngModel)]="datos_usuario.correo"
+                   required
+                   minlength= 6
+                   maxlength= 30
+                   pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"> 
+        </ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" name="password" [(ngModel)]="datos_usuario.password"> </ion-input>
-      </ion-item><br>
+        <ion-input type="password" 
+                   name="password" 
+                   [(ngModel)]="datos_usuario.password"
+                   required
+                   placeholder="Ingres 6 digitos"
+                   minlength= 6
+                   maxlength= 6> 
+        </ion-input>
+      </ion-item><br></form>
     
   </ion-card>
-  <ion-button expand="block" fill="outline" color="dark" (click)="enviarDatos()" >Registrar</ion-button>
-  <ion-button routerLink="/inicio" expand="block" fill="outline" color="dark">Cancelar</ion-button>
+  <ion-button expand="block" 
+              fill="outline" 
+              color="dark" 
+              (click)="enviarDatos()" 
+              [disabled]= formulario.invalid
+              >Registrar
+  </ion-button>
+  <ion-button routerLink="/inicio" 
+              expand="block" 
+              fill="outline" 
+              color="dark"
+              >Cancelar
+  </ion-button>
 <ion-fab vertical="bottom" slot="fixed" horizontal="end">
 <ion-fab-button routerLink="/inicio" color="morado">
   <ion-icon name="home"></ion-icon>

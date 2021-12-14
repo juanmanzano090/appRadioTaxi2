@@ -10,30 +10,71 @@
           <ion-card-title>Viajes</ion-card-title>
        </ion-card-header>
       <ion-card-content>
+        <form #formulario = "ngForm">
           <ion-item>
               <ion-label position="floating">Nombre del Cliente: </ion-label>
-              <ion-input type="text" name="nombre" [(ngModel)]="datos_viaje.nombre"></ion-input>
+              <ion-input type="text" 
+                         name="nombre" 
+                         [(ngModel)]="datos_viaje.nombre"
+                         maxlength = 20
+                         minlength = 4
+                         required
+                         >
+              </ion-input>
           </ion-item>
           <ion-item>
               <ion-label position="floating">Direccion: </ion-label>
-              <ion-input type="text" name="direccion" [(ngModel)]="datos_viaje.direccion"></ion-input>
+              <ion-input type="text" 
+                         name="direccion" 
+                         [(ngModel)]="datos_viaje.direccion"
+                         maxlength = 20
+                         minlength = 10
+                         required
+                         >
+              </ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating">Destino: </ion-label>
-            <ion-input type="text" name="destino" [(ngModel)]="datos_viaje.destino"></ion-input>
+            <ion-input type="text" 
+                       name="destino" 
+                       [(ngModel)]="datos_viaje.destino"
+                       maxlength = 20
+                       minlength = 10
+                       required
+                       >
+            </ion-input>
         </ion-item>
-          <ion-item>
-              <ion-select [(ngModel)]="datos_viaje.id_usuario"  placeholder="Seleccionar">
-                  <ion-select-option *ngFor="let dato_obtenido of datos_obtenidos" [value]="dato_obtenido._id">
+          <ion-item> <ion-label>Choferes</ion-label>
+              <ion-select name="id_usuario" 
+                          mode="ios" 
+                          [(ngModel)]="datos_viaje.id_usuario"  
+                          placeholder="Seleccionar"
+                          required>
+                  <ion-select-option *ngFor="let dato_obtenido of datos_obtenidos" 
+                                     [value]="dato_obtenido._id">
                     {{dato_obtenido.nombre}} {{dato_obtenido.apellido}}
                   </ion-select-option>
                </ion-select>
           </ion-item>
+        </form>
       </ion-card-content>
   </ion-card>
-  <ion-button  expand="block"  fill="outline" color="dark" (click)="enviarViaje()">Registrar</ion-button>
-  <ion-button routerLink="/inicio" expand="block" fill="outline" color="dark">Cancelar</ion-button>
-  <ion-fab vertical="bottom" slot="fixed" horizontal="end">
+  <ion-button  expand="block"  
+               fill="outline" 
+               color="dark" 
+               (click)="enviarViaje()"
+               [disabled]= formulario.invalid
+               >Registrar
+  </ion-button>
+  <ion-button routerLink="/inicio" 
+              expand="block" 
+              fill="outline" 
+              color="dark"
+              >Cancelar
+  </ion-button>
+  <ion-fab vertical="bottom" 
+           slot="fixed" 
+           horizontal="end">
       <ion-fab-button routerLink="/inicio" color="morado">
         <ion-icon name="home"></ion-icon>
       </ion-fab-button>

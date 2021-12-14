@@ -31,7 +31,7 @@ export class FormulaService {
   obtenerViaje(){
     return this.http.get(`${this.backend1}/obtener-viajes`);
   }
-  obtenerLogin(nombre){
-    return this.http.get(`${this.backend}/obtener-login/${nombre}`);
+  obtenerLogin(datos_login){
+    return this.http.get(`${this.backend}/obtener-login/${datos_login}`);
   }
 }
