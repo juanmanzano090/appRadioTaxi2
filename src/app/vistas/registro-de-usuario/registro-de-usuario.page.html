@@ -1,13 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="tamano" mode="ios">Usuarios</ion-title>
+    <ion-title class="tamano" mode="ios"><h4>Usuarios</h4></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card  class="cardconteudo">
     <ion-card-header>
-      <ion-card-subtitle>Formulario de registro de usuario</ion-card-subtitle>
+      <ion-card-subtitle>Formulario de registro</ion-card-subtitle>
       <ion-card-title>Usuario</ion-card-title>
    </ion-card-header>
 <form #formulario = "ngForm">
@@ -31,16 +31,36 @@
                    maxlength= 20>
         </ion-input>
       </ion-item>
-      <ion-item > 
+      <ion-row>
+        <ion-col size="4">
+      <ion-item  > 
         <ion-label position="floating">RUT</ion-label>
-        <ion-input type="text" 
+        <ion-input type="number" 
                    name="rut"
+                   placeholder="Ej: 11111111"
                    [(ngModel)]="datos_usuario.rut"
                    required
-                   minlength= 9
-                   maxlength= 10>
+                   minlength= 7
+                   maxlength= 8>
+        </ion-input>
+      </ion-item >
+        </ion-col>
+        <ion-col size="3" offset=""  align-self-center>
+      <ion-item >
+           <ion-label position="floating">DV</ion-label>
+         <ion-input type="text" 
+                   name="dv"
+                  [(ngModel)]="datos_usuario.dv"
+                  required
+                  placeholder="1-k"
+                  minlength= 1
+                  maxlength= 1
+                  pattern="^([0-9kK]{1,1})$"
+                  >
         </ion-input>
       </ion-item>
+    </ion-col>
+    </ion-row>
       <ion-item>
         <ion-label position="floating">Correo</ion-label>
         <ion-input type="text" 

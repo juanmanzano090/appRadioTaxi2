@@ -70,6 +70,7 @@ export class RegistroDeUsuarioPage implements OnInit {
         this.datos_usuario.rut = "";
         this.datos_usuario.correo = "";
         this.datos_usuario.password = "";
+        this.datos_usuario.dv = "";
 
        }else{
         const alert = await this.alertController.create({
@@ -90,7 +91,7 @@ export class RegistroDeUsuarioPage implements OnInit {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Registro Completo',
-      message: 'Se completaroN los datos de registro',
+      message: 'El registro de usuario fue exitoso',
       buttons: ['OK'],
     });
 
