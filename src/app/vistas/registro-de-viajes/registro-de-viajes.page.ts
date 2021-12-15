@@ -36,10 +36,20 @@ export class RegistroDeViajesPage implements OnInit {
       this.datos_viaje.id_usuario != "" ){
 
         this.formulaService.crearViaje(this.datos_viaje).subscribe(
-          (response:any)=>{
+         async (response:any)=>{
             if (response.viaje){
-              this.router.navigateByUrl(`/inicio`)
-              console.log("registrado correctamente")
+
+              const alert = await this.alertController.create({
+                cssClass: 'my-custom-class',
+                header: 'Registro Completo',
+                message: 'El registro de carrera fue exitoso',
+                buttons: ['OK'],
+              });
+          
+              await alert.present();
+              
+            //  this.router.navigateByUrl(`/inicio`)
+             console.log("registrado correctamente")
             }else{
               alert("datos no registrados")
             }
@@ -49,6 +59,11 @@ export class RegistroDeViajesPage implements OnInit {
           }
         )
         console.log("Datos del viaje: ",this.datos_viaje);
+
+        this.datos_viaje.nombre = "";
+        this.datos_viaje.direccion = "";
+        this.datos_viaje.destino = "";
+        this.datos_viaje.id_usuario = "";
 
       }else{
         const alert = await this.alertController.create({

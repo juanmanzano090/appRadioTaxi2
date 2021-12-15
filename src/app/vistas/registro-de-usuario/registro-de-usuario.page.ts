@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormulaService } from 'src/app/servicios/formula.service';
 import { AlertController } from '@ionic/angular';
 
@@ -7,11 +7,12 @@ import { AlertController } from '@ionic/angular';
 
 export class EnviarDatos {
   constructor(
-    public nombre,
-    public apellido,
+    public nombre: String,
+    public apellido: String,
     public rut,
-    public correo,
-    public password,
+    public dv: String,
+    public correo: String,
+    public password: String,
   ){}
 }
 
@@ -27,7 +28,7 @@ export class RegistroDeUsuarioPage implements OnInit {
      public alertController: AlertController,
      public alerta: AlertController,
      ) {
-    this.datos_usuario = new EnviarDatos("","","","","")
+    this.datos_usuario = new EnviarDatos("","","","","","")
    }
 
   ngOnInit() {
@@ -51,9 +52,18 @@ export class RegistroDeUsuarioPage implements OnInit {
         
          
     this.formulaService.registrousuario(this.datos_usuario).subscribe(
-          (response:any)=>{
+         async (response:any)=>{
             if(response.usuario){
             console.log("registrado correctamente")
+
+            const alert = await this.alertController.create({
+              cssClass: 'my-custom-class',
+              header: 'Registro Completo',
+              message: 'El registro de usuario fue exitoso',
+              buttons: ['OK'],
+            });
+        
+            await alert.present();
             
             }else{
               alert("datos no registrados")
@@ -87,19 +97,7 @@ export class RegistroDeUsuarioPage implements OnInit {
         console.log('onDidDismiss resolved with role', role);
        }
 
-   if (this.enviarDatos){
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      header: 'Registro Completo',
-      message: 'El registro de usuario fue exitoso',
-      buttons: ['OK'],
-    });
 
-    await alert.present();
-    
-    const { role } = await alert.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
-   }
     
 
 
